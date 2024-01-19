@@ -1,0 +1,134 @@
+* {
+    direction: rtl;
+    font-family: 'Rubik', sans-serif;
+}
+
+.big-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+table {
+    max-width: 800px;
+    margin: 20px;
+}
+
+.form-container {
+    width: 100%;
+    background: #ffffff;
+    padding: 2%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.beautiful-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.beautiful-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid rgb(161, 154, 154);
+}
+
+.beautiful-table th,
+.beautiful-table td {
+    border: 1px solid white;
+    padding: 10px;
+    min-width: 100px;
+    color: black;
+    text-align: center;
+}
+
+.custom-dialog-backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.form-container button {
+    background-color: #067867;
+    color: black;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #DCAE1D;
+}
+
+.beautiful-table th {
+    background-color: #DCAE1D;
+    color: black;
+    text-align: center;
+}
+
+.beautiful-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.beautiful-table button {
+    padding: 5px 10px;
+    background-color: #ff4b5a;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.beautiful-table button:hover {
+    background-color: #ff2e4a;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.elegant-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: black;
+    background-color: #DCAE1D;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px #DCAE1D;
+    outline: none;
+}
+
+.elegant-btn:hover {
+    background-color: #e4c255;
+    box-shadow: 0 5px 15px #DCAE1D;
+}
+
+.elegant-btn:active {
+    box-shadow: 0 2px 5px #DCAE1D;
+    transform: translateY(2px);
+}

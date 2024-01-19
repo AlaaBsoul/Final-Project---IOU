@@ -1,0 +1,60 @@
+<div>
+  <form [formGroup]="updateEventForm" (ngSubmit)="submitUpdate()">
+    <!-- Event Name -->
+    <div>
+      <label for="eventName">שם האירוע:</label>
+      <input type="text" formControlName="eventName" id="eventName" placeholder="שם האירוע">
+      <div class="error"
+        *ngIf="updateEventForm.get('eventName')?.touched && updateEventForm.get('eventName')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+    </div>
+    <!-- Event Date -->
+    <div>
+      <label for="eventDate">תאריך האירוע:</label>
+      <input type="date" formControlName="eventDate" id="eventDate">
+      <div class="error"
+        *ngIf="updateEventForm.get('eventDate')?.touched && updateEventForm.get('eventDate')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+    </div>
+    <!-- Event Location -->
+    <div>
+      <label for="eventLocation">מיקום האירוע:</label>
+      <input type="text" formControlName="eventLocation" id="eventLocation" placeholder="מיקום">
+      <div class="error"
+        *ngIf="updateEventForm.get('eventLocation')?.touched && updateEventForm.get('eventLocation')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+    </div>
+    <!-- Event Type -->
+    <div>
+      <label for="eventType">סוג האירוע:</label>
+      <input type="text" formControlName="eventType" id="eventType" placeholder="סוג">
+      <div class="error"
+        *ngIf="updateEventForm.get('eventType')?.touched && updateEventForm.get('eventType')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+    </div>
+    <!-- Event Cost -->
+    <div>
+      <label for="eventCost">עלות האירוע:</label>
+      <input type="number" formControlName="eventCost" id="eventCost" placeholder="עלות">
+      <div class="error"
+        *ngIf="updateEventForm.get('eventCost')?.touched && updateEventForm.get('eventCost')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+    </div>
+    <!-- Personal Reminders -->
+    <div>
+      <label for="personalReminders">תזכורות אישיות:</label>
+      <input type="text" formControlName="personalReminders" id="personalReminders" placeholder="תזכורות אישיות">
+    </div>
+    <!-- Digital Invitations -->
+    <div>
+      <label for="digitalInvitations">הזמנות דיגיטליות:</label>
+      <input type="checkbox" formControlName="digitalInvitations" id="digitalInvitations">
+    </div>
+    <button type="submit">עדכן שינויים</button>
+  </form>
+</div>

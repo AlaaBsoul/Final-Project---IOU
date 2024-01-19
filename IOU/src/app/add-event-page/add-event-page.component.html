@@ -1,0 +1,118 @@
+<div class="big-container">
+  <form [formGroup]="eventForm">
+    <div class="form-container">
+      <h2>פרטי האירוע</h2>
+
+      <input type="text" formControlName="eventName" placeholder="שם האירוע">
+      <div class="error"
+        *ngIf="eventForm.get('eventName')?.touched && eventForm.get('eventName')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+
+      <input type="date" formControlName="eventDate" placeholder="תאריך האירוע" dir="ltr">
+      <div class="error"
+        *ngIf="eventForm.get('eventDate')?.touched && eventForm.get('eventDate')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+
+      <input type="text" formControlName="eventLocation" placeholder="מיקום">
+      <div class="error"
+        *ngIf="eventForm.get('eventLocation')?.touched && eventForm.get('eventLocation')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+
+
+      <select formControlName="eventType" class="select-box">
+        <option value="">בחר סוג אירוע</option>
+        <option value="הרצאה">הרצאה</option>
+        <option value="לוויה">לוויה</option>
+        <option value="חתונה">חתונה</option>
+        <option value="יום הולדת">יום הולדת</option>
+        <option value="מסיבה">מסיבה</option>
+        <option value="אחר">אחר</option>
+      </select>
+
+      <div class="error"
+        *ngIf="eventForm.get('eventType')?.touched && eventForm.get('eventType')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+      <input type="number" formControlName="eventCost" placeholder="עלות">
+      <div class="error"
+        *ngIf="eventForm.get('eventCost')?.touched && eventForm.get('eventCost')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+      <div class="input-group">
+        <input type="text" formControlName="personalReminders" placeholder="תזכורות אישיות" class="text-input">
+        <label class="checkbox-container">הזמנות דיגיטליות
+          <input type="checkbox" formControlName="digitalInvitations">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+
+      <!-- Guest Details Section -->
+      <div class="form-container-gust">
+        <h2>הוספת אורח</h2>
+        <input type="text" required minlength="2" [(ngModel)]="currentGuestName" [ngModelOptions]="{standalone: true}"
+          name="guestNameInput" placeholder="שם האורח">
+        <input type="text" [(ngModel)]="currentGuestPhoneNumber" [ngModelOptions]="{standalone: true}"
+          name="guestPhoneNumberInput" placeholder="מספר טלפון של האורח">
+
+        <!-- Guest List Section -->
+        <div *ngIf="showGuestList" class="guest-list">
+          <h3>רשימת אורחים</h3>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr class="tr">
+                  <th class="th">שם האורח</th>
+                  <th class="th">מספר טלפון</th>
+                  <th class="th">עדכונים</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="tr" *ngFor="let guest of allGuestsList">
+                  <td class="td">{{ guest.name }}</td>
+                  <td class="td">{{ guest.phoneNumber }}</td>
+                  <td class="td">
+                    <button class="purple" type="button"
+                      (click)="addGuestToEventFromOldEvents(guest.name,guest.phoneNumber)">הוסף אורח לאירוע</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <button class="yellow" type="button" (click)="toggleGuestList()"> הצג/הסתר רשימת אורחים מאירועים קודמים</button>
+
+        <button type="button" (click)="addGuestToEvent()">הוסף אורח לאירוע</button>
+      </div>
+
+      <!-- Display List of Guests -->
+      <div *ngIf="guestList.length  " class="">
+        <table class="beautiful-table-sub">
+          <thead>
+            <tr class="tr">
+              <th>שם האורח</th>
+              <th>מספר טלפון</th>
+              <th>סטטוס</th>
+              <th>עדכונים</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let guest of guestList; let i = index">
+              <td>{{ guest.name }}</td>
+              <td>{{ guest.phoneNumber }}</td>
+              <td>{{ guest.confirmationStatus }}</td>
+              <td>
+                <div class="form-container-sub">
+                  <button type="button" (click)="removeGuest(i)">הסר</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <button type="button" class="add-event-btn" (click)="addEvent()">הוסף אירוע</button>
+  </form>
+</div>

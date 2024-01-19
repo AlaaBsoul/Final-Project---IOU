@@ -1,0 +1,64 @@
+<div class="big-container">
+  <div *ngIf="events.length>0" class="form-container">
+    <table ngSkipHydration class="beautiful-table">
+      <tr>
+        <th>שם האירוע</th>
+        <th>תאריך האירוע</th>
+        <th>מיקום</th>
+        <th>סוג</th>
+        <th>עלות</th>
+        <th>רשימת אורחים לשליחת הודעה לחצו על השם של האורח</th>
+        <th>תזכורות</th>
+        <th>הזמנות דיגיטליות</th>
+        <th>עדכון סטטוס האירוע</th>
+      </tr>
+      <tr *ngFor="let event of events">
+        <td>{{ event.eventName }}</td>
+        <td class="date-cell">{{ event.eventDate| date:'dd/MM/yyyy' }}</td>
+        <td>{{ event.eventLocation }}</td>
+        <td>{{ event.eventType }}</td>
+        <td>{{ event.eventCost }}</td>
+        <td>
+          <ul>
+            <li class="guest" *ngFor="let guest of event.guestList let i=index"> <!-- Mini Table for Guests -->
+              <table class="guest-table" *ngIf="event.guestList.length>0">
+                <thead *ngIf="i==0">
+                  <tr>
+                    <th>שם האורח</th>
+                    <th>סטטוס האישור</th>
+                    <th>מספר נייד</th>
+                    <th>שליחת הודעה</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let guest of event.guestList">
+                    <ng-container *ngIf="i==0">
+                      <td>{{ guest.name }}</td>
+                      <td>{{ guest.confirmationStatus }}</td>
+                      <td>{{ guest.phoneNumber }}</td>
+                      <td>
+                        <!-- Include any buttons or links for actions (e.g., change status, remove guest) -->
+                        <button *ngIf="currentUserPhoneNumber===guest.phoneNumber" class="white-btn">לא ניתן לשלוח הודעה
+                          לעצמך</button>
+                        <button *ngIf="currentUserPhoneNumber!==guest.phoneNumber" class="green-btn"
+                          (click)="openDialog(guest,$event)">שלח הודעה</button>
+                      </td>
+                    </ng-container>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </td>
+        <td>{{ event.personalReminders }}</td>
+        <td>{{ event.digitalInvitations ? 'כן' : 'לא' }}</td>
+        <td>
+          <select class="select-box" (change)="updateGuestConfirmationStatus(event.id, $event.target)">
+            <option value="" disabled selected></option>
+            <option [value]="status" *ngFor="let status of statuses">{{status}}</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

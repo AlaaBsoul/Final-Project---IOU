@@ -1,0 +1,11 @@
+<div class="background-container">
+
+
+    <div class="phone-verification">
+      <small *ngIf="!isValid" class="error-message">מספר טלפון לא תקין</small>
+
+      <h2>אנא הקלד מספר טלפון </h2>
+      <input [(ngModel)]="phoneNumber" type="text" placeholder="מספר טלפון...">
+      <button (click)="navigateIfValid()" class="elegant-btn">לכניסה לחץ כאן</button>
+    </div>
+</div>

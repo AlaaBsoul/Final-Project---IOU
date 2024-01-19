@@ -1,0 +1,11 @@
+{
+  "hosting": [
+    {
+      "target": "IOU",
+      "source": ".",
+      "frameworksBackend": {
+        "region": "us-central1"
+      }
+    }
+  ]
+}

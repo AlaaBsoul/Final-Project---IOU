@@ -1,0 +1,9 @@
+<div class="reminders-container">
+  <h2 class="reminders-title">תזכורות שלי</h2>
+  <div class="reminders-list">
+    <div *ngFor="let reminder of reminders" class="reminder-item">
+      <div class="event-name">שם האירוע: <span>{{reminder.eventName}}</span></div>
+      <div class="reminder-time">זמן: <span>{{reminder.time }}</span></div> <!-- Formatting date -->
+    </div>
+  </div>
+</div>

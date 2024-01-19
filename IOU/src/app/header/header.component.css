@@ -1,0 +1,47 @@
+* {
+  direction: rtl;
+}
+
+.header-unpayment-events {
+  background-color: #fff;
+  color: #333;
+  padding: 20px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px #DCAE1D;
+}
+
+.header-unpayment-events a {
+  margin: 10px;
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.header-unpayment-events a:hover {
+  background-color: #f5f5f5;
+  color: #DCAE1D;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .header-unpayment-events {
+    flex-direction: column;
+  }
+
+  .header-unpayment-events a {
+    width: 80%;
+    text-align: center;
+  }
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}

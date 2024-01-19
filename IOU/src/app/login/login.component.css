@@ -1,0 +1,65 @@
+* {
+  direction: rtl;
+}
+
+.background-container {
+  position: relative;
+  background: url('../../assets/IOU-Background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phone-verification {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -95%);
+
+  padding: 20px;
+  max-width: 400px;
+  /* margin: 50px auto; */
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.phone-verification h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.phone-verification input[type="text"] {
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+.phone-verification input[type="text"]:focus {
+  border-color: #17A08B;
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  display: block;
+  margin-top: 10px;
+}

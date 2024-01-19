@@ -1,0 +1,15 @@
+<div id="convo">
+  <ul class="chat-thread">
+    <li *ngFor="let message of messages"
+      [ngClass]="{'green':this.currentNumber==message.senderNumber,'orange':this.currentNumber==message.receiverNumber}">
+      <p *ngIf="this.currentNumber==message.senderNumber"> אני </p>
+      <p *ngIf="this.currentNumber==message.receiverNumber"> נשלח למספר {{ message.receiverNumber }} </p>
+      <p> {{" שעת השליחה: " +formatTimestamp(message.time)}}</p>
+      <p> {{" תוכן ההודעה: "+ message.content }} </p>
+    </li>
+  </ul>
+  <div class="container-a1">
+    <input [(ngModel)]="message" type="text" class="elegant-input" placeholder="תקליד טקסט">
+    <button (click)="sendMessage()" class="elegant-btn">שלח הודעה</button>
+  </div>
+</div>

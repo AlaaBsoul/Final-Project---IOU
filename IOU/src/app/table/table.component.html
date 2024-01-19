@@ -1,0 +1,40 @@
+<div *ngIf="events.length>0" class="form-container">
+  <table ngSkipHydration class="beautiful-table">
+    <tr>
+      <th>שם האירוע</th>
+      <th>תאריך האירוע</th>
+      <th>מיקום</th>
+      <th>סוג האירוע</th>
+      <th>עלות</th>
+      <th>רשימת אורחים</th>
+      <th>תזכורות</th>
+      <th>הזמנות דיגיטליות</th>
+      <th *ngIf="isMyEventsComponent">עדכן אירוע</th>
+      <th *ngIf="isMyEventsComponent">שליחת תזכורות לכל המוזמנים</th>
+      <th *ngIf="isPaymentEventsComponent">רכישת כרטיס</th>
+    </tr>
+    <tr *ngFor="let event of events">
+      <td>{{ event.eventName }}</td>
+      <td class="date-cell">{{ event.eventDate| date:'dd/MM/yyyy' }}</td> 
+      <td>{{ event.eventLocation }}</td>
+      <td>{{ event.eventType }}</td>
+      <td>{{ event.eventCost  }}</td>
+      <td>
+        <ul>
+          <li *ngFor="let guest of event.guestList">{{ guest.name }}</li>
+        </ul>
+      </td>
+      <td>{{ event.personalReminders }}</td>
+      <td>{{ event.digitalInvitations ? 'כן' : 'לא' }}</td>
+      <td *ngIf="isMyEventsComponent">
+        <button (click)="openUpdateEventDialog(event,$event)" class="green-btn">עדכן אירוע</button>
+      </td>
+      <td *ngIf="isMyEventsComponent">
+        <button (click)="sendReminder(event.guestList,event.eventName)" class="green-btn">שליחת תזכורת למשתתפים באירוע</button>
+      </td>
+      <td  *ngIf="isPaymentEventsComponent">
+        <button class="green-btn2" (click)="buyTicket(event,$event)" >רכישת כרטיס</button>
+      </td>
+    </tr>
+  </table>
+</div>

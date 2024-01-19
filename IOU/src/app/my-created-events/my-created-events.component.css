@@ -1,0 +1,7 @@
+* {
+  direction: rtl;
+}
+
+app-table {
+  width: 100vw;
+}

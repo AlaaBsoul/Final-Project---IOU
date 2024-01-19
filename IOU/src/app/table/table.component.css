@@ -1,0 +1,30 @@
+* {
+  direction: rtl;
+}
+
+.green-btn {
+  background: #17A08B;
+}
+
+.green-btn:hover,
+.green-btn:active {
+  background: #cd7ed7;
+}
+
+.green-btn2 {
+  background: #cd7ed7;
+}
+
+.green-btn2:hover,
+.green-btn2:active {
+  background: #17A08B;
+}
+
+.green-btn3 {
+  background: #DCAE1D;
+}
+
+.green-btn3:hover,
+.green-btn3:active {
+  background: rgb(172, 181, 226)
+}

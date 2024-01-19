@@ -1,0 +1,70 @@
+*{
+  direction: rtl;
+}
+
+.guest {
+  cursor: pointer;
+}
+
+.select-box {
+  width: 100px;
+}
+
+.green-btn {
+  background: #17A08B;
+}
+
+.form-container {
+  width: 100%;
+  background: #ffffff;
+  padding: 2%;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+.beautiful-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.beautiful-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border: 2px solid rgb(161, 154, 154);
+}
+
+.beautiful-table th,
+.beautiful-table td {
+  border: 1px solid white;
+  padding: 10px;
+  min-width: 100px;
+  color: black;
+  text-align: center;
+}
+
+.green-btn:hover,
+.green-btn:active {
+  background: #DCAE1D;
+}
+
+.white-btn {
+  background: rgb(237, 240, 237);
+  color: black;
+  border: 0.5px solid black;
+}
+
+.white-btn:hover,
+.green-btn:active {
+  background: rgb(237, 240, 237);
+  color: black;
+  border: 0.5px solid black;
+}
+
+ul {
+  list-style-type: none;  /* This removes the bullet point */
+}
+
+.your-ul-class {
+  list-style-type: none;
+}

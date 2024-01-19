@@ -1,0 +1,14 @@
+{
+  "targets":{
+    "finalproject-9327a":{
+      "hosting":{
+        "IOU": [
+          "finalproject-9327a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "finalproject-9327a"
+  }
+}

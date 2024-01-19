@@ -1,0 +1,19 @@
+<div>
+  <form [formGroup]="updateEventForm" (ngSubmit)="submitUpdate()">
+    <div>
+      <h2>רכישת כרטיס</h2>
+      <label for="guestName">שם :</label>
+      <div class="error"
+        *ngIf="updateEventForm.get('guestName')?.touched && updateEventForm.get('guestName')?.errors?.['required']">
+        *שדה זה חובה
+      </div>
+      <input type="text" formControlName="guestName" id="guestName" placeholder="הזן את שמך">
+    </div>
+    <div>
+      <label for="guestName">מחיר:</label>
+      <p>{{this.data.eventCost+"$"}}</p>
+    </div>
+    <!-- Submit Button -->
+    <button type="submit">רכוש כרטיס </button>
+  </form>
+</div>
