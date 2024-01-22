@@ -37,7 +37,6 @@
                       <td>{{ guest.confirmationStatus }}</td>
                       <td>{{ guest.phoneNumber }}</td>
                       <td>
-                        <!-- Include any buttons or links for actions (e.g., change status, remove guest) -->
                         <button *ngIf="currentUserPhoneNumber===guest.phoneNumber" class="white-btn">לא ניתן לשלוח הודעה
                           לעצמך</button>
                         <button *ngIf="currentUserPhoneNumber!==guest.phoneNumber" class="green-btn"

@@ -36,7 +36,7 @@
 
 .beautiful-table th,
 .beautiful-table td {
-  border: 1px solid white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 10px;
   min-width: 100px;
   color: black;

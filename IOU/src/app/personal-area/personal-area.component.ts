@@ -26,7 +26,7 @@ export class PersonalAreaComponent {
   getEvents() {
     this.mainSvc.getEvents().subscribe((data: any) => {
       this.events = data.filter((event: IEvent) =>
-        event.guestList.some((guest: IGuest) => guest.phoneNumber === this.currentUserPhoneNumber)
+        event.guestList && Array.isArray(event.guestList) && event.guestList.some((guest: IGuest) => guest.phoneNumber === this.currentUserPhoneNumber)
       );
       console.log(this.events);
     });
